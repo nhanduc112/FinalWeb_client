@@ -1,6 +1,6 @@
 .navbar{
   height: 50px;
-  background-color: #003580;
+  background-color: #4dc4d1;
   display: flex;
   justify-content: center;
 }
@@ -16,6 +16,16 @@
 
 .logo{
   font-weight: 500;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+}
+
+.loggedInNav {
+  display: flex;
+  align-items: center;
 }
 
 .navButton{

@@ -34,26 +34,35 @@ const AuthReducer = (state, action) => {
         loading: false,
         error: null,
       };
-      case "REGISTER_START":
-        return {
-          ...state,
-          loading: true,
-          error: null,
-        };
-    
-      case "REGISTER_SUCCESS":
-        return {
-          ...state,
-          loading: false,
-          error: null,
-        };
-    
-      case "REGISTER_FAILURE":
-        return {
-          ...state,
-          loading: false,
-          error: action.payload,
-        };
+      case "LOGOUT_SUCCESS":
+  localStorage.removeItem("token");
+  return {
+    ...state,
+    user: null,
+    isAuthenticated: false,
+    loading: false,
+    error: null,
+  };
+     case "REGISTER_START":
+    return {
+      ...state,
+      loading: true,
+      error: null,
+    };
+
+  case "REGISTER_SUCCESS":
+    return {
+      ...state,
+      loading: false,
+      error: null,
+    };
+
+  case "REGISTER_FAILURE":
+    return {
+      ...state,
+      loading: false,
+      error: action.payload,
+    };
     default:
       return state;
   }
